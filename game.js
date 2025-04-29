@@ -1,5 +1,34 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
+canvas.addEventListener('touchstart', handleTouchStart, false);
+canvas.addEventListener('touchmove', handleTouchMove, false);
+
+let touchX = null, touchY = null;
+
+function handleTouchStart(e) {
+  if (showCutscene) {
+    showCutscene = false;
+    return;
+  }
+  const touch = e.touches[0];
+  touchX = touch.clientX;
+  touchY = touch.clientY;
+}
+
+function handleTouchMove(e) {
+  const touch = e.touches[0];
+  const dx = touch.clientX - touchX;
+  const dy = touch.clientY - touchY;
+  if (Math.abs(dx) > Math.abs(dy)) {
+    if (dx > 10) player.x += player.speed;
+    else if (dx < -10) player.x -= player.speed;
+  } else {
+    if (dy > 10) player.y += player.speed;
+    else if (dy < -10) player.y -= player.speed;
+  }
+  touchX = touch.clientX;
+  touchY = touch.clientY;
+}
 
 // Player (Maryam)
 const player = {
@@ -108,7 +137,7 @@ function checkHeartCollection() {
       if (hearts.every(h => h.collected)) {
         setTimeout(() => {
           // New message after collecting all hearts
-          showMessage("I know I might've been a jerk, but I had never meant to hurt you in anyway. You say I dont care enough, so I created this game to prove otherwise.'");
+          showMessage("I know I might've been a jerk, but I had never meant to hurt you in anyway. You say I dont care enough, so I created this game to prove otherwise. Sorry.'");
         }, 5000);
       }
     }
