@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maryam Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ✅ Canvas element for the game -->
+  <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+  <!-- ✅ Message popup box -->
+  <div id="messageBox" style="
+    display:none;
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(255,255,255,0.9);
+    padding:10px 20px;
+    border-radius:10px;
+    font-family:sans-serif;
+    font-size:18px;
+    color:#333;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    z-index:1000;
+  "></div>
+
+  <!-- ✅ Your game logic -->
+  <script src="game.js"></script>
+
+</body>
+</html>
