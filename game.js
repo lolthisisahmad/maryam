@@ -93,7 +93,7 @@ function showInstructions() {
   ctx.fillStyle = "#fff";
   ctx.font = "20px sans-serif";
   ctx.fillText("Welcome to the game!", 150, canvas.height / 2 - 50);
-  ctx.fillText("Use Arrow Keys on ur keyboard to Move, Maryam.", 150, canvas.height / 2);
+  ctx.fillText("Use Arrow Keys on ur keyboard to Move, Maryam. (or swipe if on phone)", 150, canvas.height / 2);
   ctx.fillText("Collect all red dots to unlock special messages! Press enter to begin!", 150, canvas.height / 2 + 50);
 }
 
