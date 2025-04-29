@@ -137,7 +137,7 @@ function checkHeartCollection() {
       if (hearts.every(h => h.collected)) {
         setTimeout(() => {
           // New message after collecting all hearts
-          showMessage("I know I might've been a jerk, but I had never meant to hurt you in anyway. You say I dont care enough, so I created this game to prove otherwise. Sorry.'");
+          showMessage("I know I might've been a jerk, but I had never meant to hurt you in anyway. You say I dont care enough, so I created this game to prove otherwise. the ig gc was for u btw, so when u didnt care anymore i deleted it.'");
         }, 5000);
       }
     }
